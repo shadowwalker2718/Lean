@@ -40,11 +40,11 @@ namespace QuantConnect.Lean.Engine.DataFeeds
         private BaseData _factory;
         private bool _shouldCacheDataPoints;
         private static readonly MemoryCache BaseDataSourceCache = new MemoryCache("BaseDataSourceCache",
-            new NameValueCollection(10)
+            new NameValueCollection
             {
-                { "CacheMemoryLimitMegabytes", "100" },
+                { "CacheMemoryLimitMegabytes", "200" },
                 { "PhysicalMemoryLimitPercentage", "10" },
-                { "PollingInterval", TimeSpan.FromMilliseconds(10000).ToString() }
+                { "PollingInterval", TimeSpan.FromMilliseconds(15000).ToString() }
             });
         private static readonly CacheItemPolicy CachePolicy = new CacheItemPolicy
         {
